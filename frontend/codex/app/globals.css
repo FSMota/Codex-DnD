@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f1ea;
+  --foreground: #171312;
+  --surface: #ffffff;
+  --surface-muted: #e9e1d5;
+  --border: rgba(23, 19, 18, 0.12);
+  --primary: #2f6b5f;
+  --primary-foreground: #ffffff;
+  --accent: #c77843;
+  --accent-foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111111;
+    --foreground: #f1ece4;
+    --surface: #171717;
+    --surface-muted: #232323;
+    --border: rgba(241, 236, 228, 0.12);
+    --primary: #72b8a8;
+    --primary-foreground: #07110f;
+    --accent: #e08b4f;
+    --accent-foreground: #1b1008;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
