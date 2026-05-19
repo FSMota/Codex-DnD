@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-dnd-backend"
+version = "0.1.0"
+description = "Backend for Codex DnD"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "Django==6.0.5",
+    "djangorestframework==3.17.1",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["api*", "config*"]
