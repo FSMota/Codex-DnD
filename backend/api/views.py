@@ -1,13 +1,9 @@
 from django.http import JsonResponse
+from .models import Beast
 
-
-def hello_world(request):
-    return JsonResponse({"message": "Hello, World!"})
-
-def getallbeasts(request):
-    beasts = [
-        {"name": "Goblin", "challenge_rating": 0.25},
-        {"name": "Orc", "challenge_rating": 0.5},
-        {"name": "Troll", "challenge_rating": 5},
-    ]
-    return JsonResponse(beasts, safe=False)
+def get_all_beasts(request):
+    # Pega todos os registros do banco e transforma em uma lista de dicionários
+    data = list(Beast.objects.values())
+    
+    # safe=False é necessário para serializar listas em JSON
+    return JsonResponse(data, safe=False)
